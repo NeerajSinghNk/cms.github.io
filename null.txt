@@ -1,0 +1,26 @@
+				try{
+							Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); 
+							Connection con = DriverManager.getConnection("jdbc:odbc:valid"); 
+							Statement st= con.createStatement(); 
+							ResultSet rs=st.executeQuery("select * from teacherdetail order by dept");
+							String p,q,r,s,t;
+							out.println("<table border='1'><tr><th>ID</th><th>Name</th><th>Department</th><th>Subjects</th><th>password</th></tr>");
+							while(rs.next())
+							{
+								p=rs.getString("ID");
+								q=rs.getString("name");
+								r=rs.getString("dept");
+								s=rs.getString("sub");
+								t=rs.getString("password");
+								out.println("<tr><td>"+p+"</td>");
+								out.println("<td>"+q+"</td>");
+								out.println("<td>"+r+"</td>");
+								out.println("<td>"+s+"</td>");
+								out.println("<td>"+t+"</td></tr>");
+							}
+							out.println("</table>");
+				
+						}catch(Exception e)
+						{
+							out.println(e);
+						}

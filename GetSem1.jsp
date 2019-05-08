@@ -1,0 +1,20 @@
+<%
+	String sess=(String)request.getParameter("session");
+	if(sess!="select")
+	{
+		if(sess.equals("Jan_to_Jun"))
+		{
+			out.println("<option>select</option>");
+			out.println("<option>2</option>");
+			out.println("<option>4</option>");
+			out.println("<option>6</option>");
+		}
+		else
+		{
+					out.println("<option>select</option>");
+			out.println("<option>1</option>");
+			out.println("<option>3</option>");
+			out.println("<option>5</option>");
+		}
+	}
+%>
